@@ -34,6 +34,7 @@ describe('Promise constructor', function() {
     it('should make any errors available in the `catch` block', function(done) {
       pluckFirstLineFromFileAsync(__dirname + '/../files/nonexistent_file.txt')
         .catch(function(err) {
+          console.log(err.code);
           expect(err.code).to.equal('ENOENT');
           done();
         });

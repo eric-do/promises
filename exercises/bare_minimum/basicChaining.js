@@ -17,13 +17,13 @@ var writeFileAsync = Promise.promisify(fs.writeFile);
 var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
 
   var errorHandler = err => {
-    if (err) throw new Error(err);
-  }
+    if (err) { throw new Error(err); }
+  };
   
   return git.pluckFirstLineFromFileAsync(readFilePath)
-  .then(username => git.getGitHubProfileAsync(username))
-  .then(body => writeFileAsync(writeFilePath, JSON.stringify(body)))
-  .catch(errorHandler);
+    .then(username => git.getGitHubProfileAsync(username))
+    .then(body => writeFileAsync(writeFilePath, JSON.stringify(body)))
+    .catch(errorHandler);
 };
 
 // Export these functions so we can test them

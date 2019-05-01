@@ -66,5 +66,7 @@ var readFileAndMakeItFunnyAsync = Promise.promisify(readFileAndMakeItFunny); // 
 module.exports = {
   getGitHubProfileAsync: getGitHubProfileAsync,
   generateRandomTokenAsync: generateRandomTokenAsync,
-  readFileAndMakeItFunnyAsync: readFileAndMakeItFunnyAsync
+  readFileAndMakeItFunnyAsync: readFileAndMakeItFunnyAsync,
+  pluckFirstLineFromFileAsync: pluckFirstLineFromFileAsync,
+  getStatusCodeAsync: getStatusCodeAsync
 };
